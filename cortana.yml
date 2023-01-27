@@ -1,0 +1,20 @@
+version: '1.0'
+services:
+  cortana:
+    image: cortana/cortex:latest
+    container_name: cortana
+    ports:
+      - "9090:9090"
+      - "9091:9091"
+    environment:
+      - CORTANA_PROMETHEUS_URL=http://prometheus:9090
+    volumes:
+      - cortana_data:/cortana
+    networks:
+      - prometheus-network
+
+volumes:
+  cortana_data:
+
+networks:
+  prometheus-network:
