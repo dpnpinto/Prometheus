@@ -3,7 +3,7 @@ version: '3'
 services:
   prometheus:
     image: prom/prometheus:latest
-    container_name: prometheus
+    container_name: prometheus_EDU
     ports:
       - "9090:9090"
     volumes:
