@@ -1,0 +1,12 @@
+version: '3'
+services:
+  cortana:
+    build:
+      context: .
+      dockerfile: Cortana_V3.yml
+    image: cortana_v3
+  cortana:
+    build:
+      context: .
+      dockerfile: Prometeus_V3.yml
+    image: Prometeus_v3
