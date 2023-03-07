@@ -8,5 +8,5 @@ services:
   cortana:
     build:
       context: .
-      dockerfile: Prometeus_V3.yml
-    image: Prometeus_v3
+      dockerfile: Prometheus_v3.yml
+    image: Prometheus_v3
