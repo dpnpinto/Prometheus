@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # Author : Duarte Pinto
-# Date: November 2022
+# Date: Abril 2023
 # Version 1.0.0: "Install Docker"
 #
 sudo dnf check-update
