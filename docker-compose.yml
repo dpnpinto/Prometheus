@@ -2,6 +2,7 @@ version: "3"
 services:
   prometheus:
     image: prom/prometheus
+    container_name: Prometeus_Server
     volumes:
       - ./prometheus:/etc/prometheus
       - prometheus-data:/prometheus
@@ -12,6 +13,7 @@ services:
 
   snmp:
     image: quay.io/prometheus/snmp-exporter
+    container_name: SNMP_Exporter
     volumes:
       - /opt/docker-persist/snmp-exporter:/etc/snmp_exporter
     ports:
@@ -22,6 +24,7 @@ services:
 
   grafana:
     image: grafana/grafana
+    container_name: Grafana_Server
     ports:
       - 3000:3000
     restart: unless-stopped
