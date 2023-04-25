@@ -29,7 +29,7 @@ services:
       - grafana-storage:/var/lib/grafana
     depends_on:
       - prometheus     
-  networks:
+networks:
   - internal
 volumes:
   prometheus-data:
