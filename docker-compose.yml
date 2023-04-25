@@ -1,32 +1,38 @@
-version: '3'
-
+version: "3"
 services:
-prometheus:
-image: prom/prometheus:v2.21.0
-ports:
-- 9000:9090
-volumes:
-- ./prometheus:/etc/prometheus
-- prometheus-data:/prometheus
-command: --web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    ports:
+      - 9090:9090
+    restart: always
+    command: --web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml
 
-grafana:
-image: grafana/grafana:$GRAFANA_VERSION
-environment:
-GF_SECURITY_ADMIN_USER: $GRAFANA_ADMIN_USER
-GF_SECURITY_ADMIN_PASSWORD: $GRAFANA_ADMIN_PASSWORD
-ports:
-- 3000:3000
-volumes:
-- grafana-storage:/var/lib/grafana
-depends_on:
-- prometheus
-networks:
-- internal
+  snmp:
+    image: quay.io/prometheus/snmp-exporter
+    volumes:
+      - /opt/docker-persist/snmp-exporter:/etc/snmp_exporter
+    ports:
+      - 9116:9116
+      - 116:116/udp
+    restart: always
+    command: --config.file=/etc/snmp_exporter/snmp.yml
 
-networks:
-internal:
-
-volumes:
-prometheus-data:
-grafana-storage:
+  grafana:
+    image: grafana/grafana:$GRAFANA_VERSION
+    environment:
+      GF_SECURITY_ADMIN_USER: $GRAFANA_ADMIN_USER
+      GF_SECURITY_ADMIN_PASSWORD: $GRAFANA_ADMIN_PASSWORD
+    ports:
+      - 3000:3000
+     volumes:
+      - grafana-storage:/var/lib/grafana
+     depends_on:
+      - prometheus
+  networks:
+  - internal
+  volumes:
+  prometheus-data:
+  grafana-storage:
