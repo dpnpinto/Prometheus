@@ -14,5 +14,9 @@ flash por meio do SNMP.
 - IF-MIB: fornece informações sobre as interfaces físicas e lógicas do switch e suas estatísticas de tráfego.
 
 https://www.cisco.com/c/en/us/support/web/tools/snmp/help/index.html
+
 https://cisco.github.io/cisco-mibs/
+
+https://www.cisco.com/c/pt_br/support/docs/ip/simple-network-management-protocol-snmp/9226-mibs-9226.html
+
 https://grafana.com/blog/2022/02/01/an-advanced-guide-to-network-monitoring-with-grafana-and-prometheus/
