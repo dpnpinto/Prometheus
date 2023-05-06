@@ -11,3 +11,5 @@ de configuração por meio do SNMP.
 flash por meio do SNMP.
 - CISCO-PROCESS-MIB: fornece informações sobre os processos em execução no switch e o uso da CPU e da memória.
 - IF-MIB: fornece informações sobre as interfaces físicas e lógicas do switch e suas estatísticas de tráfego.
+
+https://www.cisco.com/c/en/us/support/web/tools/snmp/help/index.html
