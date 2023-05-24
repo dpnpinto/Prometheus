@@ -2,8 +2,8 @@ version: '3'
 
 services:
   cortana:
-    image: cortana-image:latest
-    container_name: cortana_EDU
+    image: grafana-image:latest
+    container_name: grafana_EDU
     ports:
       - "8080:8080"
     volumes:
