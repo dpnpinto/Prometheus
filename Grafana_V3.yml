@@ -1,10 +1,14 @@
 version: '3'
 
-services:
-  cortana:
-    image: grafana-image:latest
-    container_name: grafana_EDU
+volumes:
+  grafana-data:
+    driver: local
+
+  grafana:
+    image: grafana/grafana-oss:latest
+    container_name: EDU_GRAF
     ports:
-      - "8080:8080"
+      - "3000:3000"
     volumes:
-      - /path/to/config:/app/config
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
