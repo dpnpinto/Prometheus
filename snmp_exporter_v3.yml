@@ -1,8 +1,8 @@
 version: '3'
   
   snmp:
-    image: quay.io/prometheus/snmp-exporter
-    container_name: SNMPExporter
+    image: quay.io/prometheus/snmp-exporter:latest
+    container_name: EDU_SNMP
     volumes:
       - /opt/docker-persist/snmp-exporter:/etc/snmp_exporter
     ports:
