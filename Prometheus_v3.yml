@@ -1,12 +1,16 @@
 version: '3'
 
+volumes:
+  prometheus-data:
+    driver: local
 services:
   prometheus:
     image: prom/prometheus:latest
-    container_name: prometheus_EDU
+    container_name: EDU_PROM
     ports:
-      - "9090:9090"
+      - 9090:9090
     volumes:
-      - /path/to/prometheus.yml:/etc/prometheus/prometheus.yml
-      - /path/to/rules:/etc/prometheus/rules
-      - /path/to/alerts:/etc/prometheus/alerts
+      - /etc/prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    command: "--config.file=/etc/prometheus/prometheus.yml"
+    restart: unless-stopped
