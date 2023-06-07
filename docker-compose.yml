@@ -1,19 +1,26 @@
 version: "3"
+
+volumes:
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local
+    
 services:
   prometheus:
-    image: prom/prometheus
-    container_name: PrometeusServer
-    volumes:
-      - ./prometheus:/etc/prometheus
-      - prometheus-data:/prometheus
+    image: prom/prometheus:latest
+    container_name: EDU_PROM
     ports:
       - 9090:9090
-    restart: always
-    command: --web.enable-lifecycle --config.file=/etc/prometheus/prometheus.yml
-
+    volumes:
+      - /etc/prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    command: "--config.file=/etc/prometheus/prometheus.yml"
+    restart: unless-stopped
+    
   snmp:
-    image: quay.io/prometheus/snmp-exporter
-    container_name: SNMPExporter
+    image: quay.io/prometheus/snmp-exporter:latest
+    container_name: EDU_SNMP
     volumes:
       - /opt/docker-persist/snmp-exporter:/etc/snmp_exporter
     ports:
@@ -21,17 +28,14 @@ services:
       - 116:116/udp
     restart: always
     command: --config.file=/etc/snmp_exporter/snmp.yml
-
+   
   grafana:
-    image: grafana/grafana
-    container_name: GrafanaServer
+    image: grafana/grafana-oss:latest
+    container_name: EDU_GRAF
     ports:
-      - 3000:3000
-    restart: unless-stopped
+      - "3000:3000"
     volumes:
-      - grafana-storage:/var/lib/grafana
+      - grafana-data:/var/lib/grafana
+    restart: unless-stopped
     depends_on:
       - prometheus
-volumes:
-  prometheus-data:
-  grafana-storage:
