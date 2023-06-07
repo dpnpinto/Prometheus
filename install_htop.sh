@@ -3,7 +3,7 @@
 #
 # Author : Duarte Pinto
 # Date: November 2022
-# Version 1.0.0: "Install Portainer"
+# Version 1.0.0: "Install htop"
 #
 sudo dnf update
 sudo dnf install epel-release
