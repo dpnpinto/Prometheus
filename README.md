@@ -6,6 +6,6 @@ A flexibilidade do sistema utilizado tem se evrificado muito interessante e a ut
 
 SNMP EXPORTER - Recolha por poling das metricas dos switchs
 
-PROMETHEUS - Recolha da informação em base de dados temporal
+PROMETHEUS - Gestão da recolha da informação e armazenamento em base de dados temporal
 
 GRAFANA - Disponibilização da informação e gestão de alertas por grupos de utilizadores e departamento 
