@@ -1,5 +1,5 @@
 # Prometheus
-Implementação modular de um sistemas de monitorização para ativos de rede
+Implementação modular de um sistema de monitorização para ativos de rede nas Escolas dos Açores.
 Este sistema vai funciona de forma modular implementado em containers utilizando o Docker.
 Esta forma de implementação permite a colocação dos serviço em produção de forma agil e utilizando diversas arquiteturas.
 A flexibilidade do sistema utilizado tem se evrificado muito interessante e a utilização do melhor de cada componente:
