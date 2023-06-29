@@ -13,7 +13,7 @@ services:
     volumes:
       - /opt/docker-persist/prometheus:/etc/prometheus
       - prometheus-data:/prometheus
-    command: "--config.file=/etc/prometheus/prometheus.yml"
+    command: --config.file=/etc/prometheus/prometheus.yml
     restart: unless-stopped
     
   snmp:
@@ -31,7 +31,8 @@ services:
     image: grafana/grafana-oss:latest
     container_name: EDU_GRAF
     ports:
-      - "3000:3000"
+      - "3000:3000"   
     volumes:
+      - /opt/docker-persist/grafana:/etc/grafana
       - grafana-data:/var/lib/grafana
     restart: unless-stopped
