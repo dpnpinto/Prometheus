@@ -15,10 +15,24 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9090']
-- job_name: 'DESIGNACAO_ESCOLA'
+- job_name: 'DESIGNACAO_ESCOLA_A'
     static_configs:
       - targets:
-        - XXX.XXX.XXX.XXX  # IP switchs.
+        - XXX.XXX.XXX.XXX  # IP's switchs.
+    metrics_path: /snmp
+    params:
+      module: [if_mib]
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: 127.0.0.1:9116  # The SNMP exporter's real hostname:port.
+  - job_name: 'DESIGNACAO_ESCOLA_Z'
+    static_configs:
+      - targets:
+        - XXX.XXX.XXX.XXX  # IP's switchs.
     metrics_path: /snmp
     params:
       module: [if_mib]
@@ -30,7 +44,6 @@ scrape_configs:
       - target_label: __address__
         replacement: 127.0.0.1:9116  # The SNMP exporter's real hostname:port.
     
-
   # Example job for node_exporter
   # - job_name: 'node_exporter'
   #   static_configs:
