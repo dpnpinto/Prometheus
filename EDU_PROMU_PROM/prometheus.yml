@@ -19,8 +19,7 @@ scrape_configs:
     static_configs:
       - targets:
         - XXX.XXX.XXX.XXX  # IP's switchs.
-
-# --- Todas as escolas --- #
+        # --- Todos os equipaemntos da escola --- #
         
     metrics_path: /snmp
     params:
@@ -32,10 +31,14 @@ scrape_configs:
         target_label: instance
       - target_label: __address__
         replacement: 127.0.0.1:9116  # The SNMP exporter's real hostname:port.
+  
+  # --- Todas as escolas dos Açores --- #
+  
   - job_name: 'DESIGNACAO_ESCOLA_Z'
     static_configs:
       - targets:
         - XXX.XXX.XXX.XXX  # IP's switchs.
+         # --- Todos os equipaemntos da escola --- #
     metrics_path: /snmp
     params:
       module: [if_mib]
