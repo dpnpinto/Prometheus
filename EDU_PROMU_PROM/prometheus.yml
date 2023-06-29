@@ -15,11 +15,10 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ['localhost:9090']
-- job_name: 'snmp'
+- job_name: 'DESIGNACAO_ESCOLA'
     static_configs:
       - targets:
-        - 192.168.1.2  # SNMP device.
-        - switch.local # SNMP device.
+        - XXX.XXX.XXX.XXX  # IP switchs.
     metrics_path: /snmp
     params:
       module: [if_mib]
