@@ -1,3 +1,7 @@
+# Author : Duarte Pinto
+# Date: Abril
+# Version 1.0 "IF_MIB Config File"
+
 if_mib:
   version: 2
   auth:
