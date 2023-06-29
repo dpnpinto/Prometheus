@@ -19,6 +19,9 @@ scrape_configs:
     static_configs:
       - targets:
         - XXX.XXX.XXX.XXX  # IP's switchs.
+
+# --- Todas as escolas --- #
+        
     metrics_path: /snmp
     params:
       module: [if_mib]
