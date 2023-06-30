@@ -1,4 +1,4 @@
-#Apontamento sobre MIB's nos CISCO
+Apontamento sobre MIB's
 
 Os MIBs (Management Information Bases) são conjuntos de objetos que definem as informações que podem 
 ser geridas ao SNMP (Simple Network Management Protocol). Os switches Cisco suportam vários MIBs padrão 
