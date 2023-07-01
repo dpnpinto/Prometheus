@@ -4,6 +4,6 @@ O objetivo deste projeto é a implementação modular de um sistema de monitoriz
 
 SNMP EXPORTER - Recolha por pulling (por SNMP) as metricas dos switchs;
 
-PROMETHEUS - Gestão da recolha da informação e armazenamento em base de dados temporal;
+PROMETHEUS - Gestão da recolha das metricas e armazenamento em base de dados temporal;
 
-GRAFANA - Disponibilização da informação e gestão de alertas por grupos de utilizadores e departamentos; 
+GRAFANA - Disponibilização da informação em paineis de informação e gestão de alertas, por grupos de utilizadores e departamentos; 
