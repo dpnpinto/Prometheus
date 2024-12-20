@@ -13,3 +13,12 @@ O objetivo deste projeto é a implementação modular de um sistema de monitoriz
 Com as recentes atualziações que foram efetuadas ao sistema a a necessidade da sua rápida e facil instalação e atualização o mesmo foi implementado recorrendo ferramentas de implantação e integração automatizadas. Foi utilizado o Ansible para esta operação.
 O Ansible é uma ferramenta de automação open-source que simplifica e agiliza a gestão de infraestruturas de tecnologias de informação. Este software permite que possam ser configuradosconfigure sistemas e implantados aplicativos bem  aprovisionados os recursos de forma eficiente e consistente.
 Este Ansible foi desenvolvido em Pyton e utiliza uma linguagem declarativa simples e intuitiva chamada [YAML](https://pt.wikipedia.org/wiki/YAML) para criar playbooks. Um playbook é um arquivo de texto que descreve o estado que se pretende para os sistemas. O Ansible encarrega-se de comparar o estado atual com o estado desejado e realiza as alterações necessárias para alcançar a configuração desejada.
+
+## Principais conceitos do Ansible:
+
+- Inventário: Uma lista de hosts (servidores) que se pretende gerir;
+- Módulos: Pequenos programas que executam tarefas específicas, como instalar pacotes, copiar arquivos ou reiniciar serviços;
+- Roles: Uma coleção de módulos e variáveis que encapsulam uma determinada tarefa, como configurar um servidor web;
+- Playbooks: A peça central e fundamental do Ansible, onde são defenidas as tarefas a serem executadas;
+
+... Continua
